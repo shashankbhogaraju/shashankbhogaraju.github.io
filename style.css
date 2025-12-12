@@ -1,0 +1,153 @@
+/* --- 1. VARIABLES (Dual Tone Theme) --- */
+:root {
+    /* LIGHT MODE DEFAULTS */
+    --bg-color: #ffffff;
+    --sidebar-bg: #f8f9fa; /* Light grey sidebar for distinction */
+    --text-color: #1a1a1a;
+    --accent-color: #6a0dad; /* Deep Purple */
+    --secondary-text: #555;
+    --border-color: #ddd;
+    --card-bg: #fff;
+    --blog-banner: #6a0dad; /* Purple banner for blog */
+    --blog-banner-text: #fff;
+}
+
+[data-theme="dark"] {
+    /* DARK MODE DEFAULTS */
+    --bg-color: #0d0d0d;
+    --sidebar-bg: #151515;
+    --text-color: #e0e0e0;
+    --accent-color: #d080ff; /* Lighter Purple for contrast */
+    --secondary-text: #aaa;
+    --border-color: #333;
+    --card-bg: #1a1a1a;
+    --blog-banner: #2d1b4e; /* Darker purple for blog banner */
+    --blog-banner-text: #e0e0e0;
+}
+
+/* --- 2. GLOBAL RESET & LAYOUT --- */
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    min-height: 100vh;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* --- 3. SIDEBAR (The Academic "Face") --- */
+.sidebar {
+    width: 300px;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: var(--border-color);
+    margin-bottom: 20px;
+    background-image: url('profile.jpg'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    border: 3px solid var(--accent-color);
+}
+
+.name { font-size: 1.8rem; margin: 10px 0 5px 0; color: var(--accent-color); font-weight: 700; text-align: center; }
+.role { font-size: 1rem; color: var(--secondary-text); text-align: center; margin-bottom: 30px; }
+
+.nav-links { display: flex; flex-direction: column; width: 100%; gap: 10px; }
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    text-align: center;
+    font-weight: 500;
+}
+.nav-links a:hover, .nav-links a.active {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+.social-links { margin-top: auto; display: flex; gap: 15px; justify-content: center; }
+.social-links a { color: var(--secondary-text); font-size: 1.2rem; }
+.social-links a:hover { color: var(--accent-color); }
+
+/* --- 4. MAIN CONTENT AREA --- */
+.main-content {
+    flex: 1;
+    margin-left: 380px; /* sidebar width + padding */
+    padding: 60px 80px;
+    max-width: 900px;
+}
+
+/* Typography */
+h1 { font-size: 2.5rem; color: var(--accent-color); border-bottom: 3px solid var(--accent-color); display: inline-block; margin-bottom: 1.5rem; }
+h2 { font-size: 1.5rem; margin-top: 40px; border-left: 5px solid var(--accent-color); padding-left: 15px; }
+h3 { font-size: 1.2rem; margin-bottom: 5px; }
+p { line-height: 1.7; color: var(--text-color); margin-bottom: 15px; }
+a { color: var(--accent-color); text-decoration: none; font-weight: 500; }
+a:hover { text-decoration: underline; }
+
+/* Academic List Styles */
+ul.academic-list { list-style: none; padding: 0; }
+ul.academic-list li {
+    margin-bottom: 25px;
+    padding-left: 20px;
+    border-left: 2px solid var(--border-color);
+    transition: border-color 0.3s;
+}
+ul.academic-list li:hover { border-left-color: var(--accent-color); }
+.paper-title { font-weight: bold; font-size: 1.1rem; display: block; }
+.paper-meta { font-size: 0.9rem; color: var(--secondary-text); display: block; margin-top: 4px; }
+
+/* --- 5. BLOG SPECIFIC STYLES --- */
+/* This changes the look when the body has class="blog-page" */
+.blog-page .main-content {
+    padding: 0; /* Remove default padding to let banner stretch */
+    margin-left: 300px; /* Match sidebar width */
+    max-width: none;
+}
+
+.blog-header {
+    background-color: var(--blog-banner);
+    color: var(--blog-banner-text);
+    padding: 60px 80px;
+    margin-bottom: 40px;
+}
+.blog-header h1 { color: #fff; border-color: #fff; }
+.blog-header p { color: rgba(255,255,255,0.8); font-size: 1.2rem; }
+
+.blog-container { padding: 0 80px 60px 80px; max-width: 800px; margin: 0 auto; }
+
+.blog-post-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+.blog-post-card:hover { transform: translateY(-5px); border-color: var(--accent-color); }
+.blog-date { font-family: 'Courier New', monospace; font-size: 0.85rem; color: var(--accent-color); text-transform: uppercase; letter-spacing: 1px; }
+
+/* --- 6. MOBILE RESPONSIVE --- */
+@media (max-width: 850px) {
+    body { flex-direction: column; }
+    .sidebar { width: 100%; position: relative; height: auto; padding: 20px; border-right: none; border-bottom: 1px solid var(--border-color); }
+    .main-content, .blog-page .main-content { margin-left: 0; padding: 30px; }
+    .blog-container { padding: 0 20px; }
+}

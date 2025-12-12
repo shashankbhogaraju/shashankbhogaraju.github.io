@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="blog-page"> <aside class="sidebar">
+        <div class="profile-pic"></div>
+        <div class="name">[Your Name]</div>
+        <div class="role">CS Researcher & Developer</div>
+        
+        <nav class="nav-links">
+            <a href="index.html">Home / About</a>
+            <a href="index.html#publications">Publications</a>
+            <a href="index.html#projects">Projects</a>
+            <a href="blog.html" class="active">Blog 📝</a>
+        </nav>
+
+        <div style="margin-top: 20px;">
+            <button id="theme-toggle" style="background:none; border:1px solid var(--text-color); color:var(--text-color); padding:5px 10px; cursor:pointer; border-radius:4px;">🌗 Toggle Theme</button>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        
+        <header class="blog-header">
+            <h1>The Research Log</h1>
+            <p>Thoughts on Systems, Logic, and Code.</p>
+        </header>
+
+        <div class="blog-container">
+            
+            <article class="blog-post-card">
+                <div class="blog-date">Dec 12, 2025</div>
+                <h3><a href="#">Why Dual-Tone Designs Work for Academics</a></h3>
+                <p>Minimalism isn't just aesthetic; it's functional. Here is why I switched my portfolio to a high-contrast purple theme...</p>
+                <a href="#">Read More &rarr;</a>
+            </article>
+
+            <article class="blog-post-card">
+                <div class="blog-date">Nov 28, 2025</div>
+                <h3><a href="#">Handling Out-of-Distribution Data in iEEG</a></h3>
+                <p>Medical data is messy. Here is how adaptive thresholding helps us manage noise in epilepsy datasets...</p>
+                <a href="#">Read More &rarr;</a>
+            </article>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
