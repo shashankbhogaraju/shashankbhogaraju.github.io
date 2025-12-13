@@ -5,22 +5,22 @@
     /* LIGHT MODE (Default) */
     --bg-color: #ffffff;
     --text-color: #1a1a1a;
+    --secondary-text: #555; /* Gray text for paragraphs */
     --sidebar-bg: #f8f9fa;
     --accent-color: #6a0dad; /* Deep Purple */
+    --line-color: #e0e0e0;   /* Light gray for lines */
     --border-color: #e0e0e0;
-    --line-color: #6a0dad; /*Line color*/
-    --secondary-text: #666;
 }
 
 [data-theme="dark"] {
     /* DARK MODE */
-    --bg-color: #050505; /* Almost black */
+    --bg-color: #050505; 
     --text-color: #e0e0e0;
-    --sidebar-bg: #121212; /* Dark grey */
-    --accent-color: #13ebfa; /* Blue/Orange */
-    --border-color: #333;
-    --line-color:#13ebfa;/*Line color*/
     --secondary-text: #aaa;
+    --sidebar-bg: #121212; 
+    --accent-color: #07fcfc; 
+    --line-color: #07fcfc;
+    --border-color: #333;
 }
 
 /* =========================================
@@ -32,7 +32,7 @@ body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    overflow-x: hidden; /* Prevents horizontal scroll during animations */
+    overflow-x: hidden; 
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -47,7 +47,7 @@ a {
    ========================================= */
 .sidebar {
     width: 280px;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
@@ -59,36 +59,17 @@ a {
     padding: 30px 20px;
     box-sizing: border-box; 
     z-index: 1000;
-    
-    /* Anitmaation */
     transition: transform 0.3s ease;
 }
 
-/* Added by JS to hide the sidebar */
 .sidebar.closed {
-    transform: translateX(-100%); /* Slides completely off-screen left */
+    transform: translateX(-100%); 
 }
 
 /* Sidebar Components */
-.profile-pic {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background-color: #ddd; 
-    /* background-image: url('profile.jpg'); <--- UNCOMMENT WHEN YOU ADD IMAGE */
-    background-size: cover;
-    background-position: center;
-    margin-bottom: 20px;
-    border: 3px solid var(--accent-color);
-}
 
-.name {
-    font-size: 1.4rem;
-    font-weight: 700;
-    text-align: center;
-    color: var(--accent-color);
-    margin-bottom: 40px;
-}
+
+
 
 .nav-links {
     display: flex;
@@ -112,80 +93,151 @@ a {
 }
 
 /* =========================================
-   4. MAIN CONTENT AREA
+   4. MAIN CONTENT AREA - UPDATED
    ========================================= */
 .main-content {
-    
     margin-left: 280px; 
-    padding: 40px 80px; /* Top padding reduced since we have spacing in top-bar */
+    padding: 60px 80px;
     min-height: 100vh;
-    
-    /* ANIMATION MAGIC */
     transition: margin-left 0.3s ease, padding 0.3s ease;
 }
 
-/* When sidebar is closed, expand content to fill screen */
 .main-content.expanded {
     margin-left: 0;
-    padding: 40px 10%; /* Center content nicely */
+    padding: 60px 10%;
 }
 
 /* =========================================
-   5. NEW: TOP HEADER & SEPARATION
+   5. TOP HEADER & SEPARATION - UPDATED
    ========================================= */
 .top-bar {
-    /* Large separation between the line and the "Hello" intro */
-    margin-bottom: 120px; 
+    margin-bottom: 80px; /* Reduced from 120px */
     width: 100%;
 }
 
 .top-name {
-    /* Small but not too small font */
-    font-size: 1.25rem; 
-    font-weight: 600; /* Semi-bold */
+    font-size: 1.1rem; /* Slightly smaller */
+    font-weight: 500; 
     color: var(--text-color);
-    margin-bottom: 15px; /* Space between name and line */
-    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    opacity: 0.8; /* Make it more subtle */
 }
 
 .top-line {
     width: 100%;
-    height: 3px;
+    height: 2px; /* Thinner line */
     background-color: var(--line-color);
-    opacity: 0.8; /* Subtle line */
+    opacity: 0.6;
 }
 
 /* =========================================
-   6. INTRO TEXT TYPOGRAPHY
+   6. INTRO SECTION - COMPLETELY REDESIGNED
    ========================================= */
+.intro-section {
+    display: flex;
+    align-items: center; /* Vertically center items */
+    gap: 80px; /* Space between left text and right image */
+    max-width: 1200px;
+}
+
 .intro-container {
-    max-width: 900px;
+    flex: 1;
+    max-width: 600px;
 }
 
 .intro-big {
-    font-size: 3rem; /* Big */
-    font-weight: 800; /* Bold */
+    font-size: 2.8rem; /* Slightly smaller, more elegant */
+    font-weight: 700; 
     color: var(--text-color);
-    line-height: 1.1;
-    margin: 0 0 15px 0;
+    line-height: 1.2;
+    margin: 0 0 30px 0; /* More space before next paragraph */
 }
 
-.intro-small {
-    font-size: 1.8rem; /* Two sizes smaller */
-    font-weight: 400;  /* Normal weight */
+.intro-paragraph {
+    font-size: 1.1rem;
+    font-weight: 400;
     color: var(--secondary-text);
-    margin: 0;
+    line-height: 1.7; /* Better readability */
+    margin: 0 0 20px 0;
+}
+
+.intro-paragraph:last-child {
+    margin-bottom: 0;
+}
+
+/* Highlight important text like "IIT Bombay" */
+.intro-paragraph strong {
+    color: var(--text-color);
+    font-weight: 600;
 }
 
 /* =========================================
-   7. BUTTONS (Toggle & Theme)
+   7. RIGHT SIDE IMAGE/VISUAL
    ========================================= */
-/* The Menu Button (Top Left) */
+.intro-visual {
+    flex-shrink: 0;
+    width: 400px;
+    height: 400px;
+}
+
+.intro-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px; /* Rounded corners */
+    object-fit: cover;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Placeholder style if no image exists yet */
+.intro-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--bg-color) 100%);
+    border: 2px solid var(--line-color);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+/* =========================================
+   8. SOCIAL LINKS (TOP RIGHT)
+   ========================================= */
+.social-links {
+    position: fixed;
+    top: 30px;
+    right: 40px;
+    display: flex;
+    gap: 20px;
+    z-index: 1500;
+}
+
+.social-links a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   9. BUTTONS (Toggle & Theme)
+   ========================================= */
 .toggle-btn {
     position: fixed;
     top: 20px;
     left: 20px;
-    z-index: 2000; /* Always above everything */
+    z-index: 2000; 
     background-color: var(--accent-color);
     color: white;
     border: none;
@@ -201,7 +253,6 @@ a {
     background-color: var(--text-color);
 }
 
-/* Theme Toggle (Inside Sidebar) */
 .theme-btn {
     background: transparent;
     border: 1px solid var(--text-color);
@@ -220,14 +271,14 @@ a {
 }
 
 /* =========================================
-   8. MOBILE RESPONSIVENESS
+   10. MOBILE RESPONSIVENESS
    ========================================= */
 @media (max-width: 768px) {
     .sidebar {
-        transform: translateX(-100%); /* Hidden by default on mobile */
+        transform: translateX(-100%); 
     }
     
-    .sidebar.open { /* Class logic handled by JS usually, or remove 'closed' */
+    .sidebar.open {
         transform: translateX(0);
     }
     
@@ -235,18 +286,298 @@ a {
         margin-left: 0;
         padding: 40px 20px;
     }
-    
-    /* Push the top header down so it doesn't hit the "Menu" button */
+
+    /* Top bar adjustment */
     .top-bar {
-        margin-top: 60px; 
-        margin-bottom: 80px; /* Slightly less gap on mobile */
+        margin-top: 60px; /* Push down below menu button */
+    }
+    
+    /* Intro Section Mobile Stack */
+    .intro-section {
+        flex-direction: column-reverse; /* Puts text on top, image on bottom usually, or 'column' for image top */
+        gap: 40px;
+    }
+    
+    .intro-visual {
+        width: 100%;
+        max-width: 350px;
+        height: 350px;
+    }
+    
+    .intro-big {
+        font-size: 2rem;
+    }
+    
+    .intro-paragraph {
+        font-size: 1rem;
+    }
+    
+    .social-links {
+        top: 20px; /* Align with toggle button */
+        right: 20px;
+        gap: 15px;
+    }
+    
+    .social-links a {
+        font-size: 1.3rem;
+    }
+}
+/* =========================================
+   ABOUT ME PAGE STYLES
+   ========================================= */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.about-intro {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    line-height: 1.8;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+.about-section {
+    margin-bottom: 50px;
+}
+
+.about-section h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.about-section h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    margin-top: 25px;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--secondary-text);
+    margin-bottom: 15px;
+}
+
+/* Skills Section Styling */
+.skills-section {
+    background-color: var(--sidebar-bg);
+    padding: 25px;
+    border-radius: 8px;
+    margin: 25px 0;
+    border-left: 4px solid var(--accent-color);
+}
+
+.skill-group {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.skill-group strong {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.skill-detail {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--secondary-text);
+    font-style: italic;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+/* Contact Section */
+.contact-section {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 2px solid var(--border-color);
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: var(--sidebar-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.contact-link:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.contact-link i {
+    font-size: 1.2rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
     }
 
-    .intro-big {
-        font-size: 2.5rem; /* Smaller on phone */
+    .about-intro {
+        font-size: 1.1rem;
     }
-    
-    .intro-small {
-        font-size: 1.2rem;
+
+    .about-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .about-section p {
+        font-size: 1rem;
+    }
+
+    .contact-links {
+        flex-direction: column;
+    }
+
+    .contact-link {
+        width: 100%;
+        justify-content: center;
+    }
+}
+/* =========================================
+   RESUME PAGE STYLES
+   ========================================= */
+.resume-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.resume-actions {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background-color: var(--accent-color);
+    color: #fff;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.download-btn:hover {
+    background-color: var(--text-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.download-btn.secondary {
+    background-color: var(--sidebar-bg);
+    color: var(--text-color);
+    border: 2px solid var(--border-color);
+}
+
+.download-btn.secondary:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+    border-color: var(--accent-color);
+}
+
+.download-btn i {
+    font-size: 1.1rem;
+}
+
+.resume-preview {
+    width: 100%;
+    background-color: var(--sidebar-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.resume-iframe {
+    width: 100%;
+    height: 1000px;
+    border: none;
+    display: block;
+}
+
+.resume-fallback {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--sidebar-bg);
+    border-radius: 8px;
+    border: 2px dashed var(--border-color);
+}
+
+.resume-fallback p {
+    color: var(--secondary-text);
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.resume-fallback ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.resume-fallback li {
+    margin: 10px 0;
+}
+
+.resume-fallback a {
+    color: var(--accent-color);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.resume-fallback a:hover {
+    color: var(--text-color);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .resume-iframe {
+        height: 600px;
+    }
+
+    .resume-actions {
+        flex-direction: column;
+    }
+
+    .download-btn {
+        width: 100%;
+        justify-content: center;
     }
 }

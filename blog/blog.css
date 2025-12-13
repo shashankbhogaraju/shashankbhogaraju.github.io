@@ -1,0 +1,470 @@
+/* =========================================
+   BLOG PAGE - COMPLETE STANDALONE STYLES
+   Warm, Personal, Completely Different Design
+   ========================================= */
+
+/* =========================================
+   1. RESET & BASE STYLES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Blog Color Variables */
+:root {
+    --blog-bg: #1a1a1a;
+    --blog-card-bg: #242424;
+    --blog-text: #e5e5e5;
+    --blog-text-light: #a3a3a3;
+    --blog-accent: #fbbf24; /* Warm gold */
+    --blog-accent-hover: #f59e0b;
+    --blog-border: #3a3a3a;
+    --blog-category-bg: #422006;
+    --blog-category-text: #fbbf24;
+    --blog-sidebar-bg: #1f1f1f;
+    --blog-line-color: #fbbf24;
+}
+
+[data-theme="dark"] {
+    /* Dark Mode - Deep & Warm */
+    --blog-bg: #1a1a1a;
+    --blog-card-bg: #242424;
+    --blog-text: #e5e5e5;
+    --blog-text-light: #a3a3a3;
+    --blog-accent: #fbbf24; /* Warm gold */
+    --blog-accent-hover: #f59e0b;
+    --blog-border: #3a3a3a;
+    --blog-category-bg: #422006;
+    --blog-category-text: #fbbf24;
+    --blog-sidebar-bg: #1f1f1f;
+    --blog-line-color: #fbbf24;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', 'Times New Roman', serif; /* Different font - more blog-like */
+    background-color: var(--blog-bg);
+    color: var(--blog-text);
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s;
+}
+
+/* =========================================
+   2. SIDEBAR STYLES (Blog Version)
+   ========================================= */
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--blog-sidebar-bg);
+    border-right: 1px solid var(--blog-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.sidebar.closed {
+    transform: translateX(-100%);
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.nav-links a {
+    display: block;
+    padding: 12px 20px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 8px;
+    color: var(--blog-text);
+    font-family: 'Segoe UI', sans-serif; /* Sans-serif for nav */
+}
+
+.nav-links a:hover {
+    background-color: var(--blog-accent);
+    color: #fff;
+}
+
+/* =========================================
+   3. MAIN CONTENT AREA
+   ========================================= */
+.main-content {
+    margin-left: 260px;
+    padding: 50px 60px;
+    min-height: 100vh;
+    background-color: var(--blog-bg);
+    transition: margin-left 0.3s ease, padding 0.3s ease;
+}
+
+.main-content.expanded {
+    margin-left: 0;
+    padding: 50px 8%;
+}
+
+/* =========================================
+   4. TOP BAR (Blog Version)
+   ========================================= */
+.top-bar {
+    margin-bottom: 80px;
+    width: 100%;
+}
+
+.top-name {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--blog-text);
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.top-line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--blog-line-color);
+    opacity: 0.6;
+}
+
+/* =========================================
+   5. SOCIAL LINKS (Blog Version)
+   ========================================= */
+.social-links {
+    position: fixed;
+    top: 30px;
+    right: 40px;
+    display: flex;
+    gap: 18px;
+    z-index: 1500;
+}
+
+.social-links a {
+    color: var(--blog-text);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background-color: var(--blog-card-bg);
+    border: 1px solid var(--blog-border);
+    transition: all 0.2s;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.social-links a:hover {
+    background-color: var(--blog-accent);
+    color: #fff;
+    border-color: var(--blog-accent);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   6. BUTTONS (Blog Version)
+   ========================================= */
+.toggle-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 2000;
+    background-color: var(--blog-accent);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: all 0.2s;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.toggle-btn:hover {
+    background-color: var(--blog-accent-hover);
+    transform: scale(1.05);
+}
+
+.theme-btn {
+    background: transparent;
+    border: 2px solid var(--blog-text);
+    color: var(--blog-text);
+    padding: 10px 18px;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    font-weight: 600;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.theme-btn:hover {
+    background-color: var(--blog-accent);
+    border-color: var(--blog-accent);
+    color: #fff;
+}
+
+/* =========================================
+   7. BLOG CONTAINER
+   ========================================= */
+.blog-container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Blog Header */
+.blog-header {
+    text-align: center;
+    margin-bottom: 70px;
+    padding: 0 20px;
+}
+
+.blog-title {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--blog-text);
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+    font-family: 'Georgia', serif;
+}
+
+.blog-subtitle {
+    font-size: 1.4rem;
+    color: var(--blog-text-light);
+    font-weight: 400;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+    font-style: italic;
+}
+
+/* =========================================
+   8. BLOG GRID & CARDS
+   ========================================= */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
+}
+
+/* Blog Card */
+.blog-card {
+    background-color: var(--blog-card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--blog-border);
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Blog Card Image */
+.blog-card-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background-color: var(--blog-border);
+}
+
+.blog-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.blog-card:hover .blog-card-image img {
+    transform: scale(1.08);
+}
+
+/* Blog Card Content */
+.blog-card-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.blog-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 18px;
+    font-size: 0.9rem;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.blog-date {
+    color: var(--blog-text-light);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.blog-category {
+    background-color: var(--blog-category-bg);
+    color: var(--blog-category-text);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.blog-card-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.3;
+    font-family: 'Georgia', serif;
+}
+
+.blog-card-title a {
+    color: var(--blog-text);
+    transition: color 0.2s;
+}
+
+.blog-card-title a:hover {
+    color: var(--blog-accent);
+}
+
+.blog-card-excerpt {
+    color: var(--blog-text-light);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.blog-read-more {
+    color: var(--blog-accent);
+    font-weight: 700;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.2s;
+    font-family: 'Segoe UI', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.blog-read-more:hover {
+    color: var(--blog-accent-hover);
+    gap: 14px;
+}
+
+/* Coming Soon Card */
+.blog-card.coming-soon {
+    border: 3px dashed var(--blog-border);
+    background: linear-gradient(135deg, var(--blog-card-bg) 0%, var(--blog-bg) 100%);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 400px;
+}
+
+.coming-soon-icon {
+    font-size: 3.5rem;
+    color: var(--blog-accent);
+    margin-bottom: 25px;
+    opacity: 0.7;
+}
+
+.blog-card.coming-soon .blog-card-title {
+    color: var(--blog-text);
+    font-size: 1.8rem;
+}
+
+.blog-card.coming-soon .blog-card-excerpt {
+    max-width: 320px;
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   9. MOBILE RESPONSIVENESS
+   ========================================= */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 40px 20px;
+    }
+
+    .top-bar {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .blog-title {
+        font-size: 2.8rem;
+    }
+
+    .blog-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .blog-card-title {
+        font-size: 1.4rem;
+    }
+
+    .social-links {
+        top: 70px;
+        right: 20px;
+        gap: 12px;
+    }
+
+    .social-links a {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .blog-title {
+        font-size: 3.2rem;
+    }
+}
