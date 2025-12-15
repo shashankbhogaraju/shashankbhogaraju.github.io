@@ -239,7 +239,7 @@ const projectsData = {
             "GDB debugging in emulator environment"
         ],
         challenges: "Building a kernel from scratch required deep understanding of hardware-software interaction. Implemented proper memory protection and privilege separation while debugging low-level issues using GDB in an emulator. Managing the complexity of interrupt handling, paging, and process scheduling simultaneously was particularly challenging.",
-        github: "https://github.com/Shahank2810",
+        github: "https://github.com/shashankbhogaraju/Multitasking-OS/",
         demo: "#",
         date: "June - August 2025"
     }
