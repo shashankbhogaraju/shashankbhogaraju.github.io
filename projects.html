@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Shashank Vaibhav</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <button id="sidebar-toggle" class="toggle-btn">☰</button>
+    <aside class="sidebar" id="sidebar">
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about-me.html">About Me</a>
+            <a href="resume.html">Resume</a>
+            <a href="projects.html">Projects</a>
+            <!-- <a href="blog/blog.html">Blog</a> -->
+        </nav>
+        <div style="margin-top: 20px;">
+            <button id="theme-toggle" class="theme-btn">🌗</button>
+        </div>
+    </aside>
+    <main class="main-content" id="main-content">
+        <div class="social-links">
+            <a href="https://github.com/shashankbhogaraju" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            
+            <a href="www.linkedin.com/in/shashank-b-616953309" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+
+        <div class="projects-container">
+            <div class="projects-header">
+                <h1 class="page-title">My Projects</h1>
+                <p class="projects-intro">
+                    A collection of projects spanning machine learning, hardware design,software, and more. 
+                    From algorithmic trading competitions to designing superscalar processors,to OS each project 
+                    represents a deep dive into cutting-edge technology. Click on any project to learn more.
+                </p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="ml">Machine Learning</button>
+                <button class="filter-btn" data-filter="hardware">Hardware</button>
+                <button class="filter-btn" data-filter="sde">Software/SDE</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+                
+                <!-- Project 1: Algorithmic Trading -->
+                <article class="project-card" data-category="ml" data-project="1">
+                    <div class="project-image">
+                        <img src="images/ml-trading.webp" alt="Algorithmic Trading System">
+                        <div class="project-overlay">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Algorithmic Trading System</h3>
+                        <p class="project-brief">1st Place - Developed sophisticated quantitative trading pipeline generating $60K backtested profit.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">ML</span>
+                            <span class="tag">UCB Algorithms</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2: Neuromodulation -->
+                <article class="project-card" data-category="ml" data-project="2">
+                    <div class="project-image">
+                        <img src="images/soc-nm.webp" alt="ML Feature Extraction">
+                        <div class="project-overlay">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">ML Feature Extraction & Neuromodulation</h3>
+                        <p class="project-brief">Bachelor Thesis - Seizure prediction using GRU on EEG traces with hardware deployment on 65nm SoC.</p>
+                        <div class="project-tags">
+                            <span class="tag">GRU</span>
+                            <span class="tag">Hardware</span>
+                            <span class="tag">Real-time</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3: Superscalar CPU -->
+                <article class="project-card" data-category="hardware" data-project="3">
+                    <div class="project-image">
+                        <img src="images/cpu.webp" alt="Out of Order CPU">
+                        <div class="project-overlay">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Out of Order Superscalar CPU</h3>
+                        <p class="project-brief">Dual-issue, 6-stage superscalar processor achieving theoretical CPI of 0.5 with dynamic scheduling.</p>
+                        <div class="project-tags">
+                            <span class="tag">Verilog</span>
+                            <span class="tag">Pipeline</span>
+                            <span class="tag">FPGA</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 4: RISC-V SoC -->
+                <article class="project-card" data-category="hardware" data-project="4">
+                    <div class="project-image">
+                        <img src="images/cpu-2.webp" alt="RISC-V System">
+                        <div class="project-overlay">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Complete RISC-V I32 SoC</h3>
+                        <p class="project-brief">Fully functional SoC in 2 months with 100% functional coverage across all pipeline stages.</p>
+                        <div class="project-tags">
+                            <span class="tag">RISC-V</span>
+                            <span class="tag">RTL</span>
+                            <span class="tag">Verification</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 5: Virtual Try-On -->
+                <article class="project-card" data-category="ml" data-project="5">
+                    <div class="project-image">
+                        <img src="images/virtual.webp" alt="Virtual Try-On Closet">
+                        <div class="project-overlay">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Virtual Try-On Closet</h3>
+                        <p class="project-brief">VITON-HD implementation with OpenPose and TPS transformations for realistic garment fitting.</p>
+                        <div class="project-tags">
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">OpenPose</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 6: RRAM Characterization -->
+                <article class="project-card" data-category="hardware" data-project="6">
+                    <div class="project-image">
+                        <img src="images/resist.webp" alt="RRAM Instrument">
+                        <div class="project-overlay">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Instrument for RRAM Characterization</h3>
+                        <p class="project-brief">Custom PCB achieving ±10% resistance accuracy with 4×4 crossbar array support.</p>
+                        <div class="project-tags">
+                            <span class="tag">PCB Design</span>
+                            <span class="tag">Analog</span>
+                            <span class="tag">Testing</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 7: Digital FIR Filter -->
+                <!-- <article class="project-card" data-category="hardware" data-project="7">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/6a0dad/ffffff?text=FIR+Filter" alt="Digital Filter">
+                        <div class="project-overlay">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Digital FIR Filter with Sequential MAC</h3>
+                        <p class="project-brief">Complete RTL-to-GDSII flow with Chebyshev approximation and power optimization.</p>
+                        <div class="project-tags">
+                            <span class="tag">Verilog</span>
+                            <span class="tag">VLSI</span>
+                            <span class="tag">DSP</span>
+                        </div>
+                    </div>
+                </article> -->
+
+                <!-- Project 8: Pipelined RISC -->
+                <article class="project-card" data-category="hardware" data-project="8">
+                    <div class="project-image">
+                        <img src="images/cpu-3.webp" alt="Pipelined RISC">
+                        <div class="project-overlay">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Pipelined RISC Processor</h3>
+                        <p class="project-brief">16-bit, 8-register processor with 6-stage pipeline on XEN-10 FPGA Board.</p>
+                        <div class="project-tags">
+                            <span class="tag">Verilog</span>
+                            <span class="tag">FPGA</span>
+                            <span class="tag">Pipeline</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 9: SmartSupportAI -->
+                <article class="project-card" data-category="ml" data-project="9">
+                    <div class="project-image">
+                        <img src="images/aisms.webp" alt="SmartSupportAI">
+                        <div class="project-overlay">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">SmartSupportAI Conversational Engine</h3>
+                        <p class="project-brief">Custom intent resolution and context tracking for multi-turn conversations without external NLP frameworks.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">NLP</span>
+                            <span class="tag">State Mgmt</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 10: Credit Card Fraud Detection -->
+                <article class="project-card" data-category="ml" data-project="10">
+                    <div class="project-image">
+                        <img src="images/credit-card.webp" alt="Credit Card Fraud Detection">
+                        <div class="project-overlay">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Credit Card Fraud Detection System</h3>
+                        <p class="project-brief">Production ML system with 87.7% accuracy using LightGBM & DistilBERT, Kafka streaming, FastAPI, and full CI/CD.</p>
+                        <div class="project-tags">
+                            <span class="tag">LightGBM</span>
+                            <span class="tag">Kafka</span>
+                            <span class="tag">Docker</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 11: Applied ML -->
+                <article class="project-card" data-category="ml" data-project="11">
+                    <div class="project-image">
+                        <img src="images/ml.webp" alt="Applied Machine Learning">
+                        <div class="project-overlay">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Applied Machine Learning</h3>
+                        <p class="project-brief">Course project with hypothesis testing, supervised/unsupervised learning, and model comparison on real datasets.</p>
+                        <div class="project-tags">
+                            <span class="tag">SQL</span>
+                            <span class="tag">Random Forest</span>
+                            <span class="tag">ResNet18</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 12: OS Kernel -->
+                <article class="project-card" data-category="sde" data-project="12">
+                    <div class="project-image">
+                        <img src="images/os.webp" alt="OS Kernel Development">
+                        <div class="project-overlay">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Multi-Tasking OS & Kernel Development</h3>
+                        <p class="project-brief">32-bit kernel from scratch with paging, FAT16 filesystem, VFS layer, process scheduling, and memory protection.</p>
+                        <div class="project-tags">
+                            <span class="tag">C</span>
+                            <span class="tag">Assembly</span>
+                            <span class="tag">OS Dev</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Project Modal/Popup -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body" id="modal-body">
+                <!-- Content will be dynamically loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="projects.js"></script>
+</body>
+</html>
